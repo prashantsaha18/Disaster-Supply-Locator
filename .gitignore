@@ -1,0 +1,8 @@
+backend/fast2sms_api_key.txt
+backend/database_url.txt
+backend/web_api_key.txt
+backend/serviceAccountKey.json
+.env
+__pycache__/
+*.pyc
+scratch/

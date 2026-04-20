@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard | Disaster Supply Locator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body data-page="user-dashboard">
+  <div class="user-dashboard-wrapper">
+    <header class="user-dashboard-header">
+      <div class="user-header-left">
+        <div>
+          <p class="page-kicker">Field view</p>
+          <h1 class="user-brand-title">Disaster Supply <span>Locator</span></h1>
+        </div>
+        <p class="page-subtitle" id="userGreetingText">Search your address to surface nearby support and verified center details.</p>
+      </div>
+
+      <div class="user-header-right">
+        <button class="user-logout-btn" id="userLogoutBtn" type="button">Logout</button>
+      </div>
+    </header>
+
+    <main class="user-dashboard-main">
+      <section class="instruction-banner">
+        <p class="eyebrow">Search and map</p>
+        <h2>Find shelter, food, and medical relief points near your current location.</h2>
+      </section>
+
+      <section class="user-dashboard-grid">
+        <section class="left-dashboard-panel">
+          <div class="search-card">
+            <div class="search-bar-box">
+              <input type="text" id="userAddressInput" placeholder="Enter your address to search nearby relief centers" />
+              <button id="searchAddressBtn" type="button">Search</button>
+            </div>
+          </div>
+
+          <!-- Offline Map Download Card -->
+          <div class="offline-map-card">
+            <div class="offline-map-info">
+              <span class="offline-map-icon">🗺️</span>
+              <div>
+                <p class="offline-map-title">Offline Relief Map</p>
+                <p class="offline-map-desc">Download a complete offline reference with all relief centers, contact numbers, and directions — works without internet.</p>
+              </div>
+            </div>
+            <button class="offline-download-btn" id="downloadOfflineMapBtn" type="button">
+              <span>📥</span> Download Offline Map
+            </button>
+            <div class="offline-progress" id="offlineProgress" style="display:none;">
+              <div class="offline-progress-bar" id="offlineProgressBar"></div>
+              <p class="offline-progress-text" id="offlineProgressText">Preparing your offline map…</p>
+            </div>
+          </div>
+
+          <div class="map-card">
+            <div class="map-visual-area" id="mapVisualArea">
+              <div class="map-info-overlay">
+                <p class="map-overlay-title">Relief center map</p>
+                <p class="map-overlay-subtitle">Search an address to center the map and review the nearest available support.</p>
+              </div>
+              <div id="leafletMap"></div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="right-dashboard-panel">
+          <div class="relief-panel-header">
+            <p class="section-kicker">Relief directory</p>
+            <h3>Relief Centers</h3>
+          </div>
+
+          <div class="relief-center-list" id="reliefCenterList"></div>
+
+          <div class="empty-relief-state" id="emptyReliefState">
+            <p>No relief centers are available yet. New listings will appear here when administrators add them.</p>
+          </div>
+
+          <div class="emergency-note">
+            <div class="emergency-symbol">!</div>
+            <p>
+              <strong>Important:</strong> Use a specific address for better map positioning and faster discovery of nearby support centers.
+            </p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="user-dashboard-footer">
+      <p>&copy; 2026 Disaster Supply Locator. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app_new.js"></script>
+</body>
+</html>

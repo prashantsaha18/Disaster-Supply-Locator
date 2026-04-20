@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Access | Disaster Supply Locator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="admin-auth">
+  <div class="auth-page-shell">
+    <header class="site-header site-header--floating">
+      <div class="nav-container container">
+        <a href="hi.html" class="logo">Disaster Supply <span>Locator</span></a>
+        <div class="header-buttons">
+          <a href="hi.html" class="btn btn-outline">Home</a>
+          <a href="user-auth.html" class="btn btn-primary">User Login</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="auth-page">
+      <div class="auth-overlay">
+        <div class="container auth-layout">
+          <section class="auth-visual admin-auth-visual">
+            <img src="sidebar-top.png" alt="Relief shelter and protection illustration" class="auth-badge-art auth-badge-art--wide" />
+            <div class="auth-visual-card">
+              <p class="eyebrow">Admin access</p>
+              <h1>Publish trusted relief information for communities under pressure.</h1>
+              <p>
+                Register your organization, add relief center details, and keep addresses and
+                emergency numbers visible from one focused admin dashboard.
+              </p>
+              <div class="auth-chip-row">
+                <span class="auth-chip">Relief center publishing</span>
+                <span class="auth-chip">Contact number management</span>
+                <span class="auth-chip">Password reset support</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="auth-card auth-card-wide">
+            <div class="auth-toggle">
+              <button class="toggle-btn active" id="adminRegisterToggleBtn" type="button">Create Account</button>
+              <button class="toggle-btn" id="adminSigninToggleBtn" type="button">Sign In</button>
+            </div>
+
+            <div id="adminRegisterForm" class="auth-panel active-panel">
+              <div class="auth-card-header">
+                <p class="section-kicker">Organization onboarding</p>
+                <h2>Admin <span>Register</span></h2>
+                <p>Register your organization to manage relief centers, supplies, and urgent location updates.</p>
+              </div>
+
+              <form class="auth-form" id="adminRegisterActualForm">
+                <div class="form-group">
+                  <label for="adminEmail">Email Address</label>
+                  <input type="email" id="adminEmail" placeholder="Enter admin email address" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="adminPassword">Set Password</label>
+                  <input type="password" id="adminPassword" placeholder="Create a password" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="adminConfirmPassword">Confirm Password</label>
+                  <input type="password" id="adminConfirmPassword" placeholder="Confirm your password" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="companyName">Organization Name</label>
+                  <input type="text" id="companyName" placeholder="Enter NGO or organization name" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="adminPhone">Phone Number</label>
+                  <input type="tel" id="adminPhone" placeholder="Enter organization phone number" required />
+                </div>
+
+                <button type="submit" class="submit-btn">Create Admin Account</button>
+              </form>
+            </div>
+
+            <div id="adminSigninForm" class="auth-panel">
+              <div class="auth-card-header">
+                <p class="section-kicker">Returning administrator</p>
+                <h2>Admin <span>Sign In</span></h2>
+                <p>Enter your organization credentials to manage live relief center information.</p>
+              </div>
+
+              <form class="auth-form" id="adminSigninActualForm">
+                <div class="form-group">
+                  <label for="signinAdminEmail">Email Address</label>
+                  <input type="email" id="signinAdminEmail" placeholder="Enter admin email address" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="signinAdminPassword">Password</label>
+                  <input type="password" id="signinAdminPassword" placeholder="Enter password" required />
+                </div>
+
+                <button type="submit" class="submit-btn">Sign In</button>
+              </form>
+
+              <div class="forgot-password-box">
+                <button type="button" class="forgot-password-btn" id="showResetPasswordBtn">Reset password</button>
+              </div>
+
+              <div class="reset-password-panel" id="resetPasswordPanel">
+                <form class="auth-form reset-form" id="adminResetPasswordForm">
+                  <div class="form-group">
+                    <label for="resetAdminEmail">Email Address</label>
+                    <input type="email" id="resetAdminEmail" placeholder="Enter your registered email" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="newAdminPassword">New Password</label>
+                    <input type="password" id="newAdminPassword" placeholder="Enter a new password" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="confirmNewAdminPassword">Confirm New Password</label>
+                    <input type="password" id="confirmNewAdminPassword" placeholder="Confirm the new password" required />
+                  </div>
+
+                  <button type="submit" class="submit-btn">Save New Password</button>
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>&copy; 2026 Disaster Supply Locator. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app_new.js"></script>
+</body>
+</html>

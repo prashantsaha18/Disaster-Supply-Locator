@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Disaster Supply Locator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="admin-dashboard">
+  <div class="admin-wrapper">
+    <header class="admin-header">
+      <div class="header-left">
+        <div>
+          <p class="page-kicker">Command center</p>
+          <h1 class="brand-title">Disaster Supply <span>Locator</span></h1>
+        </div>
+        <div class="page-title-wrap">
+          <h2 class="page-title" id="pageTitle">Admin Dashboard</h2>
+          <p class="page-subtitle" id="adminSubtitle">Manage relief center records, contacts, and emergency updates.</p>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button class="top-btn light-btn" id="editBtn" type="button">Manage Centers</button>
+        <button class="top-btn primary-btn" id="logoutTopBtn" type="button">Logout</button>
+      </div>
+    </header>
+
+    <div class="admin-main">
+      <aside class="sidebar">
+        <div class="sidebar-image top-image" id="sidebarTopImage" aria-hidden="true"></div>
+        <nav class="sidebar-nav" id="sidebarNav"></nav>
+        <div class="sidebar-image bottom-image" id="sidebarBottomImage" aria-hidden="true"></div>
+      </aside>
+
+      <main class="content-area">
+        <section class="content-card view-section dashboard-view active-view" id="dashboardView">
+          <div class="card-header">
+            <div>
+              <p class="section-kicker">Live registry</p>
+              <h3>Relief Centers</h3>
+            </div>
+            <button class="small-action-btn top-right-btn" id="organizationInfoBtn" type="button">Organization Info</button>
+          </div>
+
+          <div class="card-controls">
+            <button class="filter-btn" id="totalItemsBtn" type="button">0 Centers</button>
+            <button class="small-action-btn" id="addCenterTopBtn" type="button">Add Center</button>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="relief-table" id="reliefTable">
+              <thead>
+                <tr>
+                  <th>Relief Center</th>
+                  <th>Relief Type</th>
+                  <th>Address</th>
+                  <th>Organization Phone</th>
+                  <th>Last Updated</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody id="reliefTableBody"></tbody>
+            </table>
+
+            <div class="empty-state" id="emptyState">
+              <p>No relief centers added yet. Use <strong>Add Center</strong> to publish the first one.</p>
+            </div>
+          </div>
+
+          <div class="bottom-actions">
+            <button class="main-btn primary-fill" id="addCenterBtn" type="button">Add Center</button>
+          </div>
+        </section>
+
+        <section class="content-card view-section manage-view" id="manageView">
+          <div class="card-header">
+            <div>
+              <p class="section-kicker">Publishing form</p>
+              <h3>Manage Relief Centers</h3>
+            </div>
+            <button class="small-action-btn top-right-btn" id="manageHintBtn" type="button">Keep details accurate</button>
+          </div>
+
+          <form class="manage-form" id="reliefForm">
+            <div class="form-row two-col">
+              <div class="form-group">
+                <label for="centerName">Center Name / Organization Name</label>
+                <input type="text" id="centerName" placeholder="Enter the center or organization name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="reliefType">Type of Relief</label>
+                <select id="reliefType" required>
+                  <option value="">Please select</option>
+                  <option>Medical Relief</option>
+                  <option>Food and Water Relief</option>
+                  <option>Shelter Relief</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row one-col">
+              <div class="form-group">
+                <label for="address">Address</label>
+                <div class="input-with-icon">
+                  <input type="text" id="address" placeholder="Enter the full address" required />
+                  <span class="input-icon">Search</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row one-col">
+              <div class="form-group">
+                <label for="phoneNumber">Phone Number of Organization</label>
+                <input type="tel" id="phoneNumber" placeholder="Enter a reachable phone number" required />
+              </div>
+            </div>
+
+            <div class="sms-action-box">
+              <div class="sms-hint">
+                <span class="sms-hint-icon">📲</span>
+                <div>
+                  <p class="sms-hint-title">Send Emergency SMS to Nearby Users</p>
+                  <p class="sms-hint-desc">Click below to auto-send SMS alerts to all registered users near the entered address (within 50 km).</p>
+                </div>
+              </div>
+              <button type="button" class="sms-send-btn" id="sendSmsBtn">
+                <span class="sms-btn-icon">✉</span> Send SMS to Nearby Users
+              </button>
+            </div>
+
+            <div class="form-actions-row">
+              <button type="submit" class="main-btn primary-fill">Save Relief Center</button>
+            </div>
+
+            <div class="form-bottom-row">
+              <button type="button" class="danger-btn" id="clearFormBtn">Clear Form</button>
+              <button type="button" class="back-btn" id="backToDashboardBtn">Back to Dashboard</button>
+            </div>
+          </form>
+
+          <div class="bottom-back-link">
+            <button class="bottom-link-btn" id="bottomBackBtn" type="button">Return to dashboard</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>&copy; 2026 Disaster Supply Locator. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app_new.js"></script>
+</body>
+</html>
