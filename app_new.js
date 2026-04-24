@@ -306,9 +306,9 @@ function initAdminDashboard() {
     el.sidebarTopImage.className = "sidebar-image top-image manage-top";
     el.sidebarBottomImage.className = "sidebar-image bottom-image manage-bottom";
     el.sidebarNav.innerHTML = `
-      <button class="nav-item active" id="sendSmsNavBtn">
+      <!-- <button class="nav-item active" id="sendSmsNavBtn">
         <span class="nav-icon">✉</span> Send SMS
-      </button>
+      </button> -->
       <button class="nav-item" id="manageReliefNavBtn">
         <span class="nav-icon">◉</span> Relief Centers
       </button>

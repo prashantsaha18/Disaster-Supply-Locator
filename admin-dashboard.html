@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard | Disaster Supply Locator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body data-page="admin-dashboard">
   <div class="admin-wrapper">
     <header class="admin-header">
@@ -43,7 +46,8 @@
               <p class="section-kicker">Live registry</p>
               <h3>Relief Centers</h3>
             </div>
-            <button class="small-action-btn top-right-btn" id="organizationInfoBtn" type="button">Organization Info</button>
+            <button class="small-action-btn top-right-btn" id="organizationInfoBtn" type="button">Organization
+              Info</button>
           </div>
 
           <div class="card-controls">
@@ -82,7 +86,8 @@
               <p class="section-kicker">Publishing form</p>
               <h3>Manage Relief Centers</h3>
             </div>
-            <button class="small-action-btn top-right-btn" id="manageHintBtn" type="button">Keep details accurate</button>
+            <button class="small-action-btn top-right-btn" id="manageHintBtn" type="button">Keep details
+              accurate</button>
           </div>
 
           <form class="manage-form" id="reliefForm">
@@ -119,19 +124,21 @@
                 <input type="tel" id="phoneNumber" placeholder="Enter a reachable phone number" required />
               </div>
             </div>
-
+            <!--
             <div class="sms-action-box">
               <div class="sms-hint">
                 <span class="sms-hint-icon">📲</span>
                 <div>
                   <p class="sms-hint-title">Send Emergency SMS to Nearby Users</p>
-                  <p class="sms-hint-desc">Click below to auto-send SMS alerts to all registered users near the entered address (within 50 km).</p>
+                  <p class="sms-hint-desc">Click below to auto-send SMS alerts to all registered users near the entered
+                    address (within 50 km).</p>
                 </div>
               </div>
               <button type="button" class="sms-send-btn" id="sendSmsBtn">
                 <span class="sms-btn-icon">✉</span> Send SMS to Nearby Users
               </button>
             </div>
+          -->
 
             <div class="form-actions-row">
               <button type="submit" class="main-btn primary-fill">Save Relief Center</button>
@@ -159,4 +166,5 @@
 
   <script src="app_new.js"></script>
 </body>
+
 </html>
