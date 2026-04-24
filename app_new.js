@@ -3,7 +3,7 @@
    Connects to Flask backend at http://localhost:5000
    ============================================================ */
 
-const API = "http://localhost:5000";
+const API = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" ? "http://localhost:5000" : window.location.origin;
 
 // ─── BUG FIX #1 ───────────────────────────────────────────────────────────────
 // REMOVED the top-level Leaflet map initialization that was here.
